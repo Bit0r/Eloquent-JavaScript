@@ -8,7 +8,7 @@ const MOUNTAINS= [
     { name: "Mont Blanc", height: 4808, place: "Italy/France" }
 ];
 
-//参数类型为{[key:string]:any}[]。[key:string]表示key为string，而不是number
+//参数类型为[key:string]:string|number。[key:string]表示key为string，而不是number
 function buildTable(data: {[key:string]:string|number}[]) {
     let table = document.createElement("table");
 
