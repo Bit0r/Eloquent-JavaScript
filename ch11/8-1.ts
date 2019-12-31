@@ -11,3 +11,4 @@ async function loadJson(url: string) { // (1)
 
 loadJson('no-such-user.json')
     .catch(alert); // Error: 404 (4)
+//时刻记住async的返回值是一个Promise，所以必须使用.then/.catch或者另一个async/await处理结果

@@ -57,4 +57,4 @@ class draw {
     }
 }
 
-new draw(<CanvasRenderingContext2D>document.querySelector('canvas')?.getContext('2d'));
+new draw(document.querySelector('canvas')?.getContext('2d')!);

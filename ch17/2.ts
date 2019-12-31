@@ -4,7 +4,7 @@ const results = [
     { name: "Unsatisfied", count: 510, color: "pink" },
     { name: "No comment", count: 175, color: "silver" }
 ];
-let cx = <CanvasRenderingContext2D>document.querySelector("canvas")?.getContext("2d");
+let cx = document.querySelector("canvas")?.getContext("2d")!;
 let total = results
     .reduce((sum, { count }) => sum + count, 0);//“解构”特性
 let currentAngle = -0.5 * Math.PI;

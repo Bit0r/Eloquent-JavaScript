@@ -15,5 +15,5 @@ console.log(byTagName(document.body, "h1").length);
 console.log(byTagName(document.body, "span").length);
 // → 3
 let para = document.querySelector("p");
-console.log(byTagName(<Node>para, "span").length);
+console.log(byTagName(para!, "span").length);
 // → 2

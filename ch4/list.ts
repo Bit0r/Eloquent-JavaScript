@@ -1,25 +1,20 @@
 class LNode {
-    value: number;
-    next: LNode | undefined;
-    constructor(value: number, next: LNode | undefined) {
-        this.value = value;
-        this.next = next;
-    }
+    constructor(public value: number, public next?: LNode) { }
 }
 class List {
-    private front: LNode | undefined;
-    private rear: LNode | undefined;
+    private front?: LNode;
+    private rear?: LNode;
     constructor() {
         this.front = this.rear = undefined;
     }
     arrayToList(arr: number[]) {
-        this.front = this.rear = new LNode(arr[0], undefined);
+        this.front = this.rear = new LNode(arr[0]);
         for (let i = 1; i < arr.length; i++) {
-            this.rear.next = new LNode(arr[i], undefined);
+            this.rear.next = new LNode(arr[i]);
             this.rear = this.rear?.next;
         }
     }
-    listToArray(list: List | undefined) {
+    listToArray(list?: List) {
         if (list == undefined)
             list = this;
         let arr: number[] = [];
@@ -27,7 +22,7 @@ class List {
             arr.push(current.value);
         return arr;
     }
-    prepend(value: number, old_list: List | undefined) {
+    prepend(value: number, old_list?: List) {
         if (old_list == undefined)
             old_list = this;
         let new_list = new List();
@@ -40,7 +35,7 @@ class List {
         new_list.front = new LNode(value, new_list.front);
         return new_list;
     }
-    nth(value: number, list: List | undefined) {
+    nth(value: number, list?: List) {
         if (list == undefined)
             list = this;
         for (let current = list.front; current != undefined; current = current.next)
@@ -48,23 +43,22 @@ class List {
                 return current;
         return undefined;
     }
-    nth_recursive(value: number, list: List | undefined) {
+    nth_recursive(value: number, list?: List) {
         function nth_r(front: LNode | undefined): LNode | undefined {
             if (front == undefined || front.value == value)
                 return front;
-            return nth_r(front.next);
+            return nth_r(front.next!);
         }
         if (list == undefined)
-            return nth_r(this.front);
-        else
-            return nth_r(list.front);
+            list = this;
+        return nth_r(list.front);
     }
 }
 
 let list = new List();
 list.arrayToList([1, 2, 3]);
-let arr = list.listToArray(undefined);
+let arr = list.listToArray();
 console.log(arr);
-list = list.prepend(0, undefined);
+list = list.prepend(0);
 console.log(list);
-console.log(list.nth(0, undefined), list.nth_recursive(3, undefined));
+console.log(list.nth(0), list.nth_recursive(3));
