@@ -1,0 +1,14 @@
+.tree {
+
+    span {
+        cursor: pointer;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}
+
+.none {
+    display: none;
+}

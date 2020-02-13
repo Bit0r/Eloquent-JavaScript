@@ -1,0 +1,20 @@
+#container {
+    pointer-events: auto;
+}
+
+.pane {
+    &::before {
+        content: '[x]';
+        color: red;
+        float: right;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    pointer-events: none;
+    width: 40vw;
+    padding: 1rem;
+    background: #edf5e1;
+    margin: auto;
+    border-top: solid #c4df9b;
+}

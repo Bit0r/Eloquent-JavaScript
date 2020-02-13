@@ -1,0 +1,21 @@
+body {
+    height: 200vh;
+}
+
+#field {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    border: 10px solid black;
+    background-color: #00FF00;
+    cursor: pointer;
+}
+
+#ball {
+    left: 0px;
+    top: 0px;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    transition: all 2s;
+}
