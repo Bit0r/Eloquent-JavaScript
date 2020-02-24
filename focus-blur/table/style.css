@@ -1,0 +1,19 @@
+#bagua-controller {
+    position: absolute;
+    bottom: -25px;
+    left: 0px;
+    z-index: 100;
+}
+
+td {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#td-innerHTML {
+    margin: 0;
+    padding: 0;
+    display: block;
+    outline: none;
+}
